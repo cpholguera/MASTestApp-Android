@@ -41,3 +41,4 @@ replay_pid*
 
 org/owasp/mastestapp/drafts/
 __handlers__/
+output/
