@@ -9,6 +9,9 @@ APK_PATH="./app/build/outputs/apk/debug/app-debug.apk"
 # Create a temporary directory for jadx output
 TEMP_JADX_OUTPUT_DIR="$OUTPUT_DIR/temp_jadx_output"
 
+# Build Android Studio project
+gradle assembleDebug
+
 # Create temporary directories for output
 mkdir -p "$OUTPUT_DIR"
 mkdir -p "$TEMP_APKTOOL_DIR"
