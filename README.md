@@ -1,5 +1,5 @@
 
-# MASTestApp
+# MASTestApp for Android
 
 ## Overview
 
@@ -32,12 +32,14 @@ git clone https://github.com/cpholguera/MASTestApp-Android.git
 - If applicable, modify the `AndroidManifest.xml` to add necessary permissions or components.
 - Build the app and **test it** on the Android emulator or a physical device
 
-### Run the Extraction Script 
+### Run the Extraction Script
 
-Run the provided script:
+Install **jadx** and **apktool** and ensure they're available in your path.
+
+Launch the app in the emulator and run the provided script:
 
 ```sh
-tools/extract-code-for-mastg-demo.sh
+./tools/extract-code-for-mastg-demo.sh
 ```
 
 The output will be:
