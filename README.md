@@ -1,4 +1,3 @@
-
 # MASTestApp for Android
 
 ## Overview
@@ -10,13 +9,13 @@ The app is intentionally simple, offering three essential files:
 2. `AndroidManifest.xml` - Contains placeholders for additional things that may be needed.
 3. `MastgTest.kt` - Contains one function. This file is intended to be modified by users to create new MASTG demos but should not be modified in the original repository.
 
-Contributors must copy the final modified `MastgTest.kt` file to their demo folder in the OWASP MASTG repository under the corresponding `risk > test > demo`.
+Contributors must copy the final modified `MastgTest.kt` file to their demo folder in the OWASP MASTG repository under the corresponding `demos/MASTG-DEMO-XXXX`.
 
 ## Instructions
 
 ### Create a New Demo in the MASTG
 
-Create a new folder in the MASTG repository under the corresponding `risk > test > demo` following the [guidelines](https://docs.google.com/document/d/1EMsVdfrDBAu0gmjWAUEs60q-fWaOmDB5oecY9d9pOlg/edit#heading=h.y294y561hx14)
+Create a new folder in the MASTG repository under the corresponding `demos/MASTG-DEMO-XXXX` following the [guidelines](https://docs.google.com/document/d/1EMsVdfrDBAu0gmjWAUEs60q-fWaOmDB5oecY9d9pOlg/edit#heading=h.y294y561hx14)
 
 ### Clone the MASTestApp Repository
 
@@ -65,14 +64,14 @@ Use the Android emulator or a physical device and run your dynamic scripts.
 Once everything works fine, copy the relevant files from the output folder to the demo folder in the MASTG repository. It should look like this:
 
 ```sh
-owasp-mastg/risks/.../demo-1/
+owasp-mastg/demos/MASTG-DEMO-XXXX/
 ├── MastgTest.kt
 ├── MastgTest_reversed.java
 ├── AndroidManifest.xml
 ├── AndroidManifest_reversed.xml
-├── demo.md
+├── MASTG-DEMO-XXXX.md
 ├── output.txt
 └── run.sh
 ```
 
-Finalize your demo by adding a `demo.md` file, tweaking the `run.sh` script, and adding the relevant output files.
+Finalize your demo by adding a `MASTG-DEMO-XXXX.md` file, tweaking the `run.sh` script, and adding the relevant output files.
