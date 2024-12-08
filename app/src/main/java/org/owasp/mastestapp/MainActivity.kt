@@ -33,9 +33,6 @@ import androidx.compose.foundation.verticalScroll
 
 import androidx.compose.ui.text.font.FontFamily
 
-import org.owasp.mastestapp.MastgTest
-import org.owasp.mastestapp.ui.theme.MASTestAppTheme
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,4 +113,3 @@ fun MyScreenContent() {
         }
     }
 }
-
