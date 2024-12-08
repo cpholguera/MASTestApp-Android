@@ -2,12 +2,7 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+.idea
 .DS_Store
 /build
 /captures
@@ -39,6 +34,6 @@ local.properties
 hs_err_pid*
 replay_pid*
 
-org/owasp/mastestapp/drafts/
+app/src/main/java/org/owasp/mastestapp/drafts
 __handlers__/
 output/
