@@ -1,0 +1,1 @@
+The raw folder is intended for some files like certificates used for pinning and more.
