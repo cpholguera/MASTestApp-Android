@@ -23,7 +23,10 @@ jobs:
       uses: gradle/actions/setup-gradle@v4
 
     - name: Run Unit Tests
-      run: ./gradlew test
+      run: |
+        ./gradlew test
+        mastgTestOutput=$(grep -oP '(?<=<pre>MastgTestOutput: ).*' app/build/reports/tests/testDebugUnitTest/classes/org.owasp.mastestapp.RunMastgTest.html)
+        echo "Test output: $mastgTestOutput"
 
     - name: Build debug version
       run: ./gradlew assembleDebug
