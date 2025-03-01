@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.webkit.WebView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -26,21 +28,26 @@ import androidx.compose.ui.viewinterop.AndroidView
 class MainActivityWebView : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
-            WebViewScreen()
+            Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                WebViewScreen(
+                    modifier = Modifier.padding(innerPadding)
+                )
+            }
         }
     }
 }
 
 @Composable
-fun WebViewScreen() {
+fun WebViewScreen(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     val mastgTestWebViewClass = MastgTestWebView(context)
     var showWebView by remember { mutableStateOf(false) } // Controls whether the WebView is displayed
     var webViewKey by remember { mutableIntStateOf(0) }      // Unique key to force WebView recreation
 
     Box(
-        modifier = Modifier.fillMaxSize().padding(16.dp)
+        modifier = modifier.fillMaxSize().padding(16.dp, 8.dp)
     ) {
         Column(
             modifier = Modifier.fillMaxSize()
