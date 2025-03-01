@@ -3,6 +3,7 @@ package org.owasp.mastestapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,14 +31,20 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Scaffold
 
 import androidx.compose.ui.text.font.FontFamily
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
-            MyScreenContent()
+            Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                MyScreenContent(
+                    modifier = Modifier.padding(innerPadding)
+                )
+            }
         }
     }
 }
@@ -62,17 +69,15 @@ fun GradientButton(onClick: () -> Unit) {
     }
 }
 
-
 @Preview
 @Composable
-fun MyScreenContent() {
+fun MyScreenContent(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     val mastgTestClass = MastgTest(context)
     var displayString by remember { mutableStateOf("") }
 
-
     Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp)
+        modifier = modifier.fillMaxSize().padding(16.dp, 8.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
