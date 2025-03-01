@@ -27,6 +27,8 @@ jobs:
         ./gradlew test
         mastgTestOutput=$(grep -oP '(?<=<pre>MastgTestOutput: ).*' app/build/reports/tests/testDebugUnitTest/classes/org.owasp.mastestapp.RunMastgTest.html)
         echo "Test output: $mastgTestOutput"
+        echo "MASTG_TEST_OUTPUT=$mastgTestOutput" >> $GITHUB_OUTPUT
+        echo "MASTG_TEST_OUTPUT=$mastgTestOutput" >> $GITHUB_ENV
 
     - name: Build debug version
       run: ./gradlew assembleDebug
