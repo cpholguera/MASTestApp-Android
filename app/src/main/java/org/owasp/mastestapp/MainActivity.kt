@@ -41,7 +41,12 @@ fun MainScreen() {
 
     BaseScreen(
         onStartClick = {
-            displayString = mastgTestClass.mastgTest()
+            Thread {
+                val result = mastgTestClass.mastgTest()
+                android.os.Handler(android.os.Looper.getMainLooper()).post {
+                    displayString = result
+                }
+            }.start()
         }
     ) {
         Text(
